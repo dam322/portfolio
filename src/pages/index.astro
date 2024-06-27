@@ -1,0 +1,81 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import LinkedInIcon from "../components/icons/Linkedin.astro";
+import Socialpill from "../components/Socialpill.astro";
+import GithubIcon from "../components/icons/Github.astro";
+import MailIcon from "../components/icons/Mail.astro";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import BriefcaseIcon from "../components/icons/Briefcase.astro";
+import CodeIcon from "../components/icons/Code.astro";
+import Projects from "../components/Projects.astro";
+---
+
+<Layout
+  title="Portfoloio de Alejandro - Desarrollador y Programador Web"
+  description="Contrata a Alejandro para crear tu aplicación web o móvil"
+>
+  <main class="px-4">
+    <SectionContainer class="py:44 pb-32">
+      <img class="rounded-full size-12 mb-4" src="alejo.jpg" alt="alejo phto" />
+      <h1
+        class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex
+		    flex-row gap-x-4 pb-6 lg:pb-10"
+      >
+        Hey, soy Alejandro <a
+          href="https://www.linkedin.com/in/david-alejandro-moreno-zapata-0728bb114/"
+          class="flex justify-center items-center"
+          target="_blank"
+          rel="noopener"
+        >
+          <Badge>Disponible para trabajar</Badge>
+        </a>
+      </h1>
+      <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+        <span>+1 año de experiencia.</span>
+        <span class="text-yellow-100"
+          >Ingeniero de Sistemas y desarrollador de Software fullstack.</span
+        >
+        <span class="text-blue-200"
+          >Me especializo en crear aplicaciones web únicas.</span
+        >
+        <span class="text-red-200">De Buga, Colombia 👨🏽‍💻.</span>
+      </h2>
+
+      <nav class="flex gap-4 mt-8 flex-wrap">
+        <Socialpill
+          href="https://www.linkedin.com/in/david-alejandro-moreno-zapata-0728bb114/"
+        >
+          <LinkedInIcon class="size-4 md:size-6" />
+          LinkedIn
+        </Socialpill>
+        <Socialpill href="https://github.com/dam322">
+          <GithubIcon class="size-4 md:size-6" />
+          Github
+        </Socialpill>
+
+        <Socialpill href="mailto:dmoreno1932@gmail.com">
+          <MailIcon class="size-4 md:size-6" />
+          dmoreno1932@gmail.com
+        </Socialpill>
+      </nav>
+    </SectionContainer>
+
+    <SectionContainer id="experiencia">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <BriefcaseIcon class="size-7" />
+        Experiencia Laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="proyectos">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <CodeIcon class="size-7" />
+        Proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
+  </main>
+</Layout>

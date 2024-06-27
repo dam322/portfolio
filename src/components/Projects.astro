@@ -1,0 +1,97 @@
+---
+import ReactIcon from "../components/icons/React.astro";
+import DjangoIcon from "../components/icons/Django.astro";
+import TailwindIcon from "../components/icons/Tailwind.astro";
+import PostgresIcon from "../components/icons/Postgre.astro";
+import PythonIcon from "../components/icons/Python.astro";
+import AngularIcon from "../components/icons/Angular.astro";
+import CSharpIcon from "../components/icons/CSharp.astro";
+
+const TAGS = {
+  REACT: {
+    name: "React",
+    class: "bg-blue-500/10 text-white",
+    icon: ReactIcon,
+  },
+  DJANGO: {
+    name: "Django",
+    class: "bg-green-500/10 text-white",
+    icon: DjangoIcon,
+  },
+  TAILWIND: {
+    name: "TailwindCSS",
+    class: "bg-yellow-500/10 text-white",
+    icon: TailwindIcon,
+  },
+  POSTGRESQL: {
+    name: "PostgreSQL",
+    class: "bg-blue-500/10 text-white",
+    icon: PostgresIcon,
+
+  },
+  DOTNET: {
+    name: ".NET",
+    class: "bg-purple-500/10 text-white",
+    icon: CSharpIcon,
+  },
+  PYTHON: {
+    name: "Python",
+    class: "bg-yellow-500/10 text-white",
+    icon: PythonIcon,
+  },
+  ANGULAR: {
+    name: "Angular",
+    class: "bg-red-500/10 text-white",
+    icon: AngularIcon,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Project 1",
+    description: "This is a description of project 1",
+    image: "/public/projects/reco.webp",
+    link: "https://www.google.com",
+    tags: [TAGS.REACT, TAGS.DJANGO, TAGS.TAILWIND, TAGS.POSTGRESQL],
+  },
+  {
+    title: "Project 2",
+    description: "This is a description of project 2",
+    image: "https://via.placeholder.com/300x200",
+    link: "https://www.google.com",
+    tags: [TAGS.DOTNET, TAGS.PYTHON, TAGS.ANGULAR],
+  },
+  {
+    title: "Project 3",
+    description: "This is a description of project 3",
+    image: "https://via.placeholder.com/300x200",
+    link: "https://www.google.com",
+    tags: [TAGS.REACT],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ title, description, image, link, tags }) => (
+    <article>
+      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+      <ul class="flex gap-x-2 flex-row mb-3">
+        {tags.map((tag) => (
+          <li>
+            <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+              <tag.icon class="size-5" />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <img
+        class="rounded shadow-2xl shadow-white/10"
+        src={image}
+        alt={`Captura de pantalla del proyecto ${image}`}
+      />
+      <a href={link}>Link</a>
+    </article>
+  ))
+}
